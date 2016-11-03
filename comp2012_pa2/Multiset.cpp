@@ -30,20 +30,14 @@ Multiset::Multiset(const Multiset& another)
 
 Multiset::~Multiset()
 {
-	if(head != NULL)
+	Node* cur = head;
+	while(cur != NULL)
 	{
-		Node* cur = head;
-		Node* nex = head->getNext();
-		while(nex != NULL)
-		{
-			delete cur;
-			cur = NULL;
-			cur = nex;
-			nex = nex->getNext();
-		}
+		head = head->getNext();
 		delete cur;
-		cur = NULL;
+		cur = head;
 	}
+	head = NULL;
 }
 
 int Multiset::cardinality() const
