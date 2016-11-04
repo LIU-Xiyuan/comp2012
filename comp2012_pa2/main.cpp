@@ -12,6 +12,7 @@ int main()
 	cout << endl << "=== set1 ===" << endl;
 	cout << "add 11, 22, 33 ..." << endl;
 	Multiset set1;
+
 	cout << set1 << endl;
 	set1 += 11;
 	cout << set1 << endl;

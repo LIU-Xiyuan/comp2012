@@ -144,6 +144,7 @@ Multiset& Multiset::operator-=(const int& item)
 		if(n->getValue() == item)
 			n->decrementCount();
 	}
+
 	return *this;
 }
 
@@ -230,20 +231,14 @@ Multiset Multiset::operator&(const Multiset& another) const
 
 Multiset& Multiset::operator=(const Multiset& another)
 {
-	if(head != NULL)
+	Node* cur = head;
+	while(cur != NULL)
 	{
-		Node* cur = head;
-		Node* nex = head->getNext();
-		while(nex != NULL)
-		{
-			delete cur;
-			cur = NULL;
-			cur = nex;
-			nex = nex->getNext();
-		}
+		head = head->getNext();
 		delete cur;
-		cur = NULL;
+		cur = head;
 	}
+	head = NULL;
 
 	if(another.head == NULL)
 		head = NULL;
@@ -261,6 +256,7 @@ Multiset& Multiset::operator=(const Multiset& another)
 			cur = cur->getNext();
 		}
 	}
+
 	return *this;
 }
 

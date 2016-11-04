@@ -12,7 +12,7 @@ Stack::~Stack()
 {
 	if(index!=0)
 	{
-		delete Top;
+		delete []Top;
 		Top=NULL;
 	}
 }
@@ -43,7 +43,7 @@ int Stack::pop()
 		}
 		else if(index==1)
 		{
-			delete Top;
+			delete []Top;
 			Top=NULL;
 		}
 		index-=1;
