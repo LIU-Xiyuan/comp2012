@@ -138,13 +138,10 @@ Multiset& Multiset::operator+=(const int& item)
 
 Multiset& Multiset::operator-=(const int& item)
 {
-	Node* n = head;
-	for(;n != NULL; n = n->getNext())
-	{
-		if(n->getValue() == item)
-			n->decrementCount();
-	}
-
+	Multiset a(*this);
+	Multiset b;
+	b.operator +=(item);
+	*this = a.operator -(b);
 	return *this;
 }
 
@@ -231,32 +228,34 @@ Multiset Multiset::operator&(const Multiset& another) const
 
 Multiset& Multiset::operator=(const Multiset& another)
 {
-	Node* cur = head;
-	while(cur != NULL)
+	if(this != &another)
 	{
-		head = head->getNext();
-		delete cur;
-		cur = head;
-	}
-	head = NULL;
-
-	if(another.head == NULL)
-		head = NULL;
-	else
-	{
-		head = new Node(*another.head);
 		Node* cur = head;
-		Node* nex = another.head->getNext();
-
-		while(nex != NULL)
+		while(cur != NULL)
 		{
-			Node* n = new Node(*nex);
-			cur->setNext(n);
-			nex = nex->getNext();
-			cur = cur->getNext();
+			head = head->getNext();
+			delete cur;
+			cur = head;
+		}
+		head = NULL;
+
+		if(another.head == NULL)
+			head = NULL;
+		else
+		{
+			head = new Node(*another.head);
+			Node* cur = head;
+			Node* nex = another.head->getNext();
+
+			while(nex != NULL)
+			{
+				Node* n = new Node(*nex);
+				cur->setNext(n);
+				nex = nex->getNext();
+				cur = cur->getNext();
+			}
 		}
 	}
-
 	return *this;
 }
 

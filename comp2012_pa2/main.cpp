@@ -43,9 +43,9 @@ int main()
     cout << set2 << endl;
     set2 += 11;
     cout << set2 << endl;
-    set2 += 100;
+    set2 += 0;
     cout << set2 << endl;
-    set2 -= 11;
+    set2 -= 0;
     cout << set2 << endl;
 
     cout << "set2's cardinality = " << set2.cardinality() << endl;
@@ -68,15 +68,15 @@ int main()
     Multiset set4b;
     set4a +=  2;
     set4a +=  4;
-    set4a +=  4;
-    set4a +=  6;
+    set4a +=  0;
+    set4a +=  -2;
+    set4b += 1;
+    set4b += 0;
+    set4b += 6;
+    set4b += 3;
     set4b += 4;
-    set4b += 6;
-    set4b += 6;
-    set4b += 6;
-    set4b += 8;
-    set4b += 10;
-    set4b += 10;
+    set4b += 1;
+    set4b += 2;
     Multiset set4 = set4a | set4b;
     cout << set4a << " | " << set4b << " = " << set4 << endl;
     cout << set4 << " & " << set4a << " = " << (set4 & set4a) << endl;
