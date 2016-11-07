@@ -1,15 +1,11 @@
-22:59:20 **** Incremental Build of configuration Debug for project comp2012_pa2 ****
+
+Invoking autoreconf in build directory: /home/sam/eclipse/workspace/comp2012/comp2012_pa2/
+
+sh -c "autoreconf -i" 
+sh: 1: autoreconf: not found
+
+Configuration failed with error
+Build stopped
+()18:12:57 **** Build of configuration Build (GNU) for project comp2012_pa2 ****
 make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-Finished building: ../main.cpp
- 
-Building target: comp2012_pa2
-Invoking: GCC C++ Linker
-g++  -o "comp2012_pa2"  ./Multiset.o ./Node.o ./main.o   
-Finished building target: comp2012_pa2
- 
-22:59:24 **** Incremental Build of configuration Debug for project comp2012_pa2 ****
-make all 
-make: Nothing to be done for 'all'.
+make: *** No rule to make target `all'.  Stop.
