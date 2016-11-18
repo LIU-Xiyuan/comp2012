@@ -6,7 +6,6 @@
 class Vehicle: private Engine
 {
 private:
-	Engine engine;  // Car has-a engine
 	Color color;	// Color of the car
 	int mileage;	// Total mileage
 
@@ -15,10 +14,10 @@ public:
 	Color getColor() const;
 	int getMileage() const;
 	int getEngine() const;
-	~Vehicle();
-	void start();
-	void brake(int distance);
-	void print() const;
+	virtual ~Vehicle();
+	virtual void start();
+	virtual void brake(int distance);
+	virtual void print() const;
 };
 
 

@@ -2,12 +2,13 @@
 #include "Vehicle.h"
 using namespace std;
 
-Vehicle::Vehicle(int nc, Color c, int mile):engine(nc), color(c),mileage(mile){}
+Vehicle::Vehicle(int nc, Color c, int mile): Engine(nc), color(c), mileage(mile){}
 
 Vehicle::~Vehicle()
 {
-	cout<<"Calling Car's destructor on the following car:"<<endl;
+	cout<<"Calling Vehicle's destructor on the following vehicle:"<<endl;
 	Vehicle::print();
+	cout<<endl;
 }
 
 Color Vehicle::getColor() const
@@ -22,23 +23,24 @@ int Vehicle::getMileage() const
 
 int Vehicle::getEngine() const
 {
-	return engine.getNumCylinder();
+	return Engine::getNumCylinder();
 }
 
 void Vehicle::start()
 {
-	cout<<"Car with ";
-	engine.Start();
+	cout<<"Vehicle with ";
+	Engine::Start();
 }
 
 void Vehicle::brake(int distance)
 {
-	cout<<"Car with ";
-	engine.Stop();
+	cout<<"Vehicle with ";
+	Engine::Stop();
 	mileage += distance;
+	cout<<"Driving distance: "<<distance<<endl;
 }
 
 void Vehicle::print() const
 {
-	cout<<"Engine: "<<engine.getNumCylinder()<<"\t"<<"color: "<<color<<"\t"<<"Current Mileage: "<<mileage<<endl;
+	cout<<"Engine: "<<Engine::getNumCylinder()<<"\t"<<"color: "<<color<<"\t"<<"Current Mileage: "<<mileage<<endl;
 }
