@@ -1,4 +1,4 @@
-13:57:45 **** Clean-only build of configuration Debug for project comp2012_lab8 ****
+14:31:49 **** Clean-only build of configuration Debug for project comp2012_lab9 ****
 make clean 
-rm -rf  ./Car.o ./DeliveryCar.o ./Engine.o ./PoliceCar.o ./Vehicle.o ./main.o  ./Car.d ./DeliveryCar.d ./Engine.d ./PoliceCar.d ./Vehicle.d ./main.d  comp2012_lab8
+rm -rf  ./Animal.o ./Carrot.o ./Cat.o ./Organism.o ./Pig.o ./Plant.o ./Rose.o ./main.o  ./Animal.d ./Carrot.d ./Cat.d ./Organism.d ./Pig.d ./Plant.d ./Rose.d ./main.d  comp2012_lab9
  
