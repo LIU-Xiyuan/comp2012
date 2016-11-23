@@ -1,4 +1,19 @@
-14:31:49 **** Clean-only build of configuration Debug for project comp2012_lab9 ****
-make clean 
-rm -rf  ./Animal.o ./Carrot.o ./Cat.o ./Organism.o ./Pig.o ./Plant.o ./Rose.o ./main.o  ./Animal.d ./Carrot.d ./Cat.d ./Organism.d ./Pig.d ./Plant.d ./Rose.d ./main.d  comp2012_lab9
+17:05:41 **** Build of configuration Debug for project comp2012_pa3 ****
+make all 
+Building file: ../Heroes.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Heroes.d" -MT"Heroes.o" -o "Heroes.o" "../Heroes.cpp"
+Finished building: ../Heroes.cpp
  
+Building file: ../Heroes_completed.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Heroes_completed.d" -MT"Heroes_completed.o" -o "Heroes_completed.o" "../Heroes_completed.cpp"
+../Heroes_completed.cpp: In member function ‘void Hero::action(Hero*)’:
+../Heroes_completed.cpp:44:14: error: ‘move’ was not declared in this scope
+     move(hero);
+              ^
+../Heroes_completed.cpp:45:16: error: ‘attack’ was not declared in this scope
+     attack(hero);
+                ^
+make: *** [Heroes_completed.o] Error 1
+subdir.mk:24: recipe for target 'Heroes_completed.o' failed
