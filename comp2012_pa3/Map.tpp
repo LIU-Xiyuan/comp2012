@@ -27,13 +27,14 @@ public:
     {
         for (int i = 0; i < total_round; i++)
         {
-            cout << "Round " << i << ": " << endl;
+            cout << "Round " << i << ":" << endl;
             red->action(blue);
             blue->action(red);
 
             // TODO:: add codes to let pvp_env influence red and blue
 
-
+            pvp_env(red);
+            pvp_env(blue);
             red->print();
             blue->print();
             if (red->is_dead() && blue->is_dead())
@@ -56,9 +57,9 @@ public:
         cout << "Tie!" << endl;
     }
     Map(const PVP_ENV& pvp_env_)
-        : pvp_env(pvp_env_)
-        , red(new Hero(0, 1))
+        : red(new Hero(0, 1))
         , blue(new Hero(99, -1))
+        , pvp_env(pvp_env_)
     {
     }
     ~Map()

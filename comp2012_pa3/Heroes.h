@@ -44,6 +44,10 @@ public:
     // otherwise return false
     bool gain_exp(int exp);
 
+    virtual void attack(Hero* enemy);
+    virtual void attacked(int dhp);
+    virtual void move(const Hero* enemy);
+
 protected:
     int hp, mp, atk, def, spd, remain_exp;
     int location;
@@ -65,17 +69,17 @@ public:
     friend class Hero;
 	virtual ~Warrior(){}
     virtual void print();
-	
+
     // Define all the virtual member functions in public domain
     // you think need to be overloaded according to the description in website
-
 protected:
     int armor;
     Warrior(const Warrior& hero);
 	
     // Define all the virtual member functions in protected domain
     // you think need to be overloaded according to the description in website
-
+    void attacked(int dhp);
+    Hero* evolve();
 private:
     Warrior(const Hero& hero);
 };
@@ -94,7 +98,8 @@ public:
 protected:
     // Define all the virtual member function in protected domain
     // you think need to be overloaded according to the description in website
-
+    void move(const Hero* enemy);
+    Hero* evolve();
 private:
     Knight(const Warrior& hero);
 };
@@ -113,7 +118,8 @@ public:
 protected:
     // Define all the virtual member function in protected domain
     // you think need to be overloaded according to the description in website
-
+    void attack(Hero* enemy);
+    Hero* evolve();
 private:
     Berserker(const Warrior& hero);
 };
@@ -135,7 +141,9 @@ protected:
 	
     // Define all the virtual member functions in protected domain
     // you think need to be overloaded according to the description in website
-
+    void attack(Hero* enemy);
+    void attacked(int dhp);
+    Hero* evolve();
 private:
     Mage(const Hero& hero);
 };
@@ -153,7 +161,8 @@ public:
 protected:
     // Define all the virtual member functions in protected domain
     // you think need to be overloaded according to the description in website
-
+	void attack(Hero* enemy);
+	Hero* evolve();
 private:
     Magician(const Mage& hero);
 };
@@ -171,7 +180,8 @@ public:
 protected:
     // Define all the virtual member functions in protected domain
     // you think need to be overloaded according to the description in website
-
+	void move(const Hero* enemy);
+	Hero* evolve();
 private:
     Healer(const Mage& hero);
 };
